@@ -97,6 +97,10 @@ function webmOnebox(node) {
         video.src = link.href.replace(/(gifv)$/,'webm');
         video.width = 320;
         video.height = 240;
+        if (/gifv$/.test(link.href)){
+       	    video.loop = true;
+       	    video.autoplay = true;
+        }
         link.parentNode.replaceChild(video, link);
     }
 }
